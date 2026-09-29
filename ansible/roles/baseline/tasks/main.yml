@@ -1,0 +1,9 @@
+- name: Install baseline packages
+  ansible.builtin.package:
+    name: [curl, unzip]
+    state: present
+- name: Disable SSH password authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication'
+    line: 'PasswordAuthentication no'

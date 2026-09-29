@@ -1,0 +1,4 @@
+- name: Linux baseline
+  hosts: all
+  become: true
+  roles: [baseline]
